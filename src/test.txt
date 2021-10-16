@@ -1,0 +1,19 @@
+C:\
+    Documents
+		Images
+			Image1.jpg
+			Image2.jpg
+			Image3.jpg
+
+		Works
+			Letter.dox
+			Accountant
+				Accounting.xls
+				AnnualReport.xls
+	Program Files
+		Skype
+			Skype.exe
+			Readme.txt
+		Mysql
+			Mysql.exe
+			Mysql.com
