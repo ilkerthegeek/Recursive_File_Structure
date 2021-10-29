@@ -4,13 +4,11 @@ C:\
 			Image1.jpg
 			Image2.jpg
 			Image3.jpg
-
 		Works
 			Letter.docx
 			Accountant
 				Accounting.xls
 				AnnualReport.xls
-
 	Program Files
 		Skype
 			Skype.exe
