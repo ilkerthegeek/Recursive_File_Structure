@@ -1,14 +1,9 @@
 
-import javax.print.DocFlavor;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class Structure {
     private String name;
@@ -17,10 +12,7 @@ public class Structure {
     int level;
     int id;
     int unique_id;
-
     int location;
-
-
     public Structure(String name, String type, int location,int unique_id) {
         this.name = name;
         this.type = type;
@@ -144,7 +136,7 @@ public class Structure {
                                 int stack_level = mystack.lastElement().location;
                                 String stack_type = mystack.lastElement().type;
                                 Structure dbObject = new Structure(last_stack_id,parentname,stack_type,level);
-                                String sql = "INSERT INTO objects VALUES (?, ?,?,?)";
+                                String sql = "INSERT INTO objects VALUES (?,?,?,?,?)";
 
                                 PreparedStatement pstmt = con.prepareStatement(sql);
 
@@ -152,6 +144,7 @@ public class Structure {
                                 pstmt.setString(2,parentname);
                                 pstmt.setInt(3,stack_level);
                                 pstmt.setString(4,stack_type);
+                                pstmt.setString(5,parentname.toLowerCase(Locale.ROOT));
                                 pstmt.executeUpdate();
                                 mystack.pop();
                                 prev_last_level = last_level;
@@ -182,7 +175,7 @@ public class Structure {
             }
             String sql_child = "INSERT INTO children_table VALUES (?, ?)";
             PreparedStatement pstmt_child = con_child.prepareStatement(sql_child);
-            String sql = "INSERT INTO objects VALUES (?, ?,?,?)";
+            String sql = "INSERT INTO objects VALUES (?, ?,?,?,?)";
             int prev_stack_level = -1;
             ArrayList<Integer> stackArraychild= new ArrayList<>();
             int current_stack_level = mystack.lastElement().location;
@@ -200,6 +193,7 @@ public class Structure {
                 pstmt.setString(2,mystack.lastElement().name);
                 pstmt.setInt(3,mystack.lastElement().location);
                 pstmt.setString(4,mystack.lastElement().type);
+                pstmt.setString(5,mystack.lastElement().name.toLowerCase(Locale.ROOT));
                 pstmt.executeUpdate();
                 prev_stack_level=mystack.lastElement().location;
                 stackArraychild.add(mystack.lastElement().unique_id);
@@ -209,6 +203,9 @@ public class Structure {
                 }
 
             }
+            pstmt_child.setInt(1,0);
+            pstmt_child.setInt(2,-1);
+            pstmt_child.executeUpdate();
             buf.close();
 
         } catch (Exception e) {

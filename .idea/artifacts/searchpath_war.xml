@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="searchpath:war">
+    <output-path>$PROJECT_DIR$/searchpath/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>searchpath</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="searchpath-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="searchpath:war exploded" />
+    </root>
+  </artifact>
+</component>

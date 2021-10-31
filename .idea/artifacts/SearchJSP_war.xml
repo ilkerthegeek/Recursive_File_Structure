@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SearchJSP:war">
+    <output-path>$PROJECT_DIR$/demo/SearchJSP/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>SearchJSP</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="SearchJSP-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SearchJSP:war exploded" />
+    </root>
+  </artifact>
+</component>
