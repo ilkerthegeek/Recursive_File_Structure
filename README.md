@@ -1,2 +1,3 @@
-# Task1
-Task1 for job 
+Hi, This project created for the netpay as a job task . 
+
+First of all I used stacks to store what is read from .txt file because I wanted keep recording the relationships and levels of the folders or files. I preferred to design it to implement a tree in database. I implemented a tree in the database with parents and I used breadth-depth search using recursive query to find the paths because we want to design a program which consist every possible path for the searched string so keeping the path and finding the the related word is our duty as a program. Breadth-first search is basically what we desired. on the UI part I used jsp file because It was a java task and I wanted to use .jsp files. I used Tomcat server on my machine for server.I tested unit testing and it worked I also attached the pictures. Please do not hesitate to contact with me if you have any issue.
